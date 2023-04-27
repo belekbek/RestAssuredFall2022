@@ -1,23 +1,21 @@
-package org.example;
-
+package org.example.examples;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-
-import java.util.ArrayList;
 import java.util.Arrays;
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Demo2 {
-
     static String userId = "";
     static RequestSpecification requestSpecification;
     static Response response;
@@ -38,11 +36,12 @@ public class Demo2 {
                 .request(Method.GET, "users");
 
         response = requestSpecification // чтобы получить ответы
-                .request(Method.GET, "users/1218093");
+                .request(Method.GET, "users/1244514");
         response.prettyPrint();
+        response.then().body("gender", Matchers.is("male")); //для сравнение значения какого то поле
     }
 
-        @Test()
+    @Test()
     public void test2CreateUser(){
         String payload = "{\n" +
                 "        \"name\": \"Belek Baratov\",\n" +

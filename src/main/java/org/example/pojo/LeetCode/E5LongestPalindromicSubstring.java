@@ -1,4 +1,4 @@
-package org.example.LeetCode;
+package org.example.pojo.LeetCode;
 
 public class E5LongestPalindromicSubstring {
 
