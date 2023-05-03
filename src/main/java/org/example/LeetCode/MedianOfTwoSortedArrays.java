@@ -1,4 +1,4 @@
-package org.example.pojo.LeetCode;
+package org.example.LeetCode;
 
 import java.util.Arrays;
 

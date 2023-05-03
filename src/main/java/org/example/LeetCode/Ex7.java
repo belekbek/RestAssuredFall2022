@@ -1,4 +1,4 @@
-package org.example.pojo.LeetCode;
+package org.example.LeetCode;
 
 public class Ex7 {
     public static void main(String[] args) {
